@@ -85,9 +85,12 @@
 \newpage
 \phantomsection{}
 \printnomenclature
+\nomenclature[E]{\(\alpha\)}{Alpha}
 \nomenclature[E]{\(\beta\)}{Beta}
+\nomenclature[E]{\(\epsilon\)}{Epsilon}
 \nomenclature[E]{\(\sigma\)}{Sigma}
 \nomenclature[E]{\(\sum\)}{Uppercase Sigma}
+\nomenclature[E]{\(\omega\)}{Omega}
 
 \nomenclature[H]{\(e\)}{Euler's constant \nomunit{\(2.71828\)}}
 
@@ -347,162 +350,73 @@ In conclusion, this chapter briefly introduces various concepts and terminologie
 \newpage
 \section{\centering Literature Review}
 \vskip 0.25in
-This chapter attempts to provide an in-depth understanding of the different machine learning approaches that have been used for the verification and recognition process of biometric traits. The following chapter is divided into 2 subsections - unimodal system and multimodal system. Within these subsections, a brief understanding is provided of the approaches used for biometric recognition and verification.
+This chapter discusses various contributions of researchers and scholars for Risk Management in Banking using Machine Learning Models.
+
 \vskip 0.2in
-\subsection{Unimodal Biometric Verification System}
-This subsection provides an in-depth understanding of the various unimodal biometric traits and the approaches used for the verification of these biometric traits.
+\subsection{Credit Risk}
+Credit Risk analysis is the fundamental problem of the lending economy, with initial efforts dating back to the 20th century. The financial recessions of the 21st century and the ever-increasing complexity of regulatory constraints have led to increased academic and business efforts towards the problem. From a Machine Learning perspective, evaluating credit risk involves binary classification: Determining if a potential customer is credit-worthy from their financial history.
+
 \vskip 0.2in
-\subsubsection{Common Biometric Traits}
-Biometrics traits including face, voice, fingerprint, etc are few of the most commonly-used biometric traits.
+\subsubsection{Traditional Machine Learning Algorithms for Credit Scoring}
+\noindent A family of statistical frameworks have been adopted since the early 1900s for credit scoring potential borrowers. Among the traditional classifiers, SVMs have yielded significantly better results.
+\\
+\\
+\noindent Bellotti et al. tested the performance of SVMs for credit score classification and contrasted the results with traditional approaches [8]. The paper compares the performance of different algorithms like LR, SVM, LDA and KNN. The work concluded with LDA and SVM reporting the highest AUC scores for the ROC curves when trained on a dataset of about 25,000 over three months of 2004 for credit card based lending [8]. However, SVMs are very sensitive to the outliers of the datasets. Wang et al. introduced a fuzzy SVM algorithm for the classification task to reduce this sensitivity and increase the generalization of the data [13].
+
 \vskip 0.2in
-\paragraph{Deoxyribonucleic acid (DNA)}
-DNA is a unique code for each individual and is a one-dimensional vector in shape. The one catch is that identical twins have indistinguishable DNA patterns; nevertheless, with 26 distinct bands analysed, the likelihood of two individuals having the same DNA profile is less than one in a hundred billion \cite{bashir:2015}. The DNA detection/verification is carried out through polymorphism analysis. The following figure (Fig. 10) explains the basic flow to DNA polymorphism analysis.
-\begin{center}
-\includegraphics[scale=0.8]{dna authentication.jpeg}
-\captionof{figure}{The flow of DNA polymorphism analysis \cite{masaki:2011}}
-\end{center}
+\subsubsection{Neural Networks for Credit Scoring}
+\noindent Early works in the area primarily included the use of SVM based algorithms. However, with larger datasets, training becomes computationally expensive [10]. ANNs have been widely researched for credit scoring [11, 12]. Several Ensemble methods have been employed to improve the accuracy of the ANN models [9].
+\\
+\\
+Angelini et al. used ANNs to determine credit risk among small businesses as credit borrowers [14]. The work proposes a real-world dataset of Italian businesses and provides a comprehensive network performance analysis for various neuron configurations.
+\\
+\\
+Tsai et al. employed a single MLP classifier as a benchmark for prediction accuracy and compared the performance with multiple classifiers in the ensembled form [9]. The paper also reports the variation in accuracy by modifying training configuration parameters like the number of epochs, network architecture, and the number of classifiers for ensembling. The analysis is performed on the publicly available Australian, German and Japanese credit datasets.
+
+
 \vskip 0.2in
-\noindent The limitations associated with this trait include \cite{jain:2004}: 
-\begin{enumerate}
-\item \textbf{Contamination and Sensitivity} \vskip 0.05in \noindent It's simple to steal a strand of DNA from a certified identity and use it for nefarious purposes.
-\item \textbf{Automatic real-time recognition issues} \vskip 0.05in \noindent The present DNA matching methods involve various chemical processes. This requires the use of an expert's skills and is not a real-time process.
-\end{enumerate}
+\subsection{Market Risk}
+\noindent Market risk deals with the volatility of indices. Value at Risk (VAR) estimates the worst loss that will not exceed in a particular time frame. It captures the combined effect of underlying volatility and exposure to financial risks. Volatility estimation is a part of the time series forecasting domain. ANNs excel at these learning problems compared to traditional methods. A commonly used forecasting framework for time series is the Generalized Autoregressive Conditional Heteroskedasticity (GARCH) model [16]. It is derived from the Autoregressive Conditional Heteroscedasticity (ARCH) model, which predicts the volatility of innovation or error term as a function of previous error terms.
+\\
+\\
+The volatility at time \(t\) is given as a function of prior error terms as:
+
+\begin{equation}
+    \sigma_t^2 = \alpha_0 + \sum_{i = 1}^{n} \alpha_i \epsilon_{t - i}^2
+\end{equation}
+
+\noindent GARCH model also considers the volatility of prior time to predict the current volatility:
+
+\begin{equation}
+    \sigma_t^2 = \ \omega + \sum_{i = 1}^{n} \alpha_i \epsilon_{t - i}^2 + \sum_{i = 1}^{p} \beta_i \sigma_{t - i}^2
+\end{equation}
+
+\noindent Zhang et al. proposed a model to calculate the VAR (volatility) in an index from the GARCH model using ANNs [15]. The paper also presents a comparative analysis with other models like just GARCH and SVM to predict volatility.
+
 \vskip 0.2in
-\paragraph{Face}
-Individuals are recognized based on the structure of their faces. Each face is made up of peaks and valleys and has features located at varying latitudes and longitudes of the face as seen in figure (Fig. 11). Within this, a face scanner acts as the sensor and it is used for the enrollment of an individual face trait and can be further used for verification \cite{oloyede:2016}. 
+\subsection{Liquidity Risk}
+\noindent Liquidity risk is the risk of not being equipped to raise capital when required. Trading of financial instruments and assets enable the raising of capital to banking institutions. Such funding is known as funding liquidity. When it is difficult to borrow or raise money, liquidity risk comes into play. For example, banks faced heavy losses in the 2008 crisis when assets were trading at heavily discounted rates due to the crash and the banks urgently needed funds to keep their businesses running.
+\\
+\\
+\noindent Machine learning can solve several liquidity risk factors. ANNs can be used to estimate a risk measure. Approximation of general risk trends and discovery of principal risk determinants can be made using ANNs. BN can be used to predict the probability of a liquidity risk event happening.  By using distributive estimation, the ANN and BN implementations could identify the most critical liquidity risk factors.
+\\
+\\
+\noindent Tavana et al. used a combination of ANN and BN to determine liquidity risk (LCR and NSFR) from a real-world dataset of a U.S. bank focusing mainly on loans for eight consecutive years. The ANN was used to approximate the general trend of liquidity risk and find the influential factors. Further, the BN was used to find the most influential factor from the data filtered by the ANN [19].
+
 \vskip 0.2in
-\begin{center}
-\includegraphics[scale=0.6]{face marks.png}
-\captionof{figure}{Human face with peaks and valleys at different altitude \cite{oloyede:2016}}
-\end{center}
-\vskip 0.2in
-\noindent The face recognition/verification process has advanced from the simple geometrical matching of the latitude and longitude to complex mathematical representations, providing higher accurate results. There have been several research works and approaches in the field of face verification systems. Broadly, the use of the neural network, SVM classifiers, PCA for dimensionality reduction, and various deep network implementations has been carried out in the field.  
-\vskip 0.2in
-\noindent A face detection system based on a neural network and the color of skin has been implemented. This system showed successful detection of faces on videos and photos. Another implementation used SVM for detecting a face. Here, an elastic graph matching was used for locating feature points of facial images. This system showed effectiveness for the face recognition system \cite{oloyede:2016}. Different lighting and poses for the face can pose a major problem in face recognition. It was solved by employing a deep convolutional neural network (CNN) to optimise the embedding rather than an intermediate bottleneck layer as in earlier DL approaches. \cite{schroff:2015}. However, using face recognition as an individual trait has various limitations that remain unsolved. 
-\vskip 0.2in
-\paragraph{Fingerprint}
-Fingerprints are one of the most commonly adapted biometric authentication techniques. They have unique features associated with them and are unique for identical twins as well. Fingerprints constitute ridges and valleys as seen in figure (Fig. 12). The ridges make up the minutiae points upon which the recognition/verification of fingerprints is performed \cite{bashir:2015}.
-\vskip 0.2in
-\noindent Few approaches that have shown significant accuracy for fingerprint verification have been stated. A fingerprint matching approach has been proposed based on the Hidden Markov Model (HMM) approach. Another approach for embedding a double watermark into fingerprint images was proposed. This approach enhanced the authentication performance based on watermark messages \cite{oloyede:2016}.
-\vskip 0.2in
-\begin{center}
-\includegraphics[scale=0.6]{fingerprint.png}
-\captionof{figure}{Ridges and valleys of a fingerprint \cite{oloyede:2016}}
-\end{center}
-\vskip 0.2in
-\noindent This trait's drawbacks include the following \cite{jain:2004}: 
-\begin{enumerate}
-    \item Fingerprint can introduce noisy data as dirt on a fingerprint can change the feature provided by the trait.
-    \item Spoofing attacks can easily cause one to steal the fingerprint identification of the individual and use it for wrong intent.
-    \item It requires a large number of computational resources, especially for the identification mode.
-\end{enumerate}
-\vskip 0.2in
-\paragraph{Voice}
-The voice is a biometric traits that combines behavioral and physiological characteristics. The shape and size of an individual's vocal tracts, nasal activities, etc are used to extract details from their voice. \cite{jain:2004}. 
-\vskip 0.2in
-\noindent A system known to verify a customer in a short time was developed by Barclays using speaker recognition. To extract features, the detection of nodules was implemented using a larynx pathology classifier. The classifier was based on linear prediction coefficients, least squares support vector machines \cite{oloyede:2016}. This method provided an overall accuracy of 90\% The limitation associated with this trait is it has a high FRR \cite{bashir:2015}. 
-\vskip 0.2in
-\subsubsection{Unique Biometric Traits}
-Unique biometric traits include utilizing brain waves and heartbeats for biometric authentication as novel approaches.
-\paragraph{Brain}
-The analysis of the firing of neurons within the brain and various brain activities can serve as a novel approach to biometric authentication. The use of electroencephalogram (EEG) is a unique approach.Researchers have proposed employing autoregressive models (AR) to model the EEG signal. For classification, Kohonen's Vector Quantizer (VQ) and discriminant analysis have been proposed. Recently, the use of Gaussian Mixture Models (GMM) has proved to serve as an alternative to classification \cite{bashir:2015}.
-\paragraph{Heart}
-Heartbeats follow the characteristics of a biometric system such as distinctiveness, universality, etc. An electrocardiogram (ECG) evaluates and tests the heartbeats and using it as an authentication mode has the advantage of adopting live user body signals. In general, machine learning algorithms are adopted for constructing the verification model by getting the individual's live ECG data. However, several challenges exist for constructing the model from ECG signal such as pre-processing for data quality, selecting the best machine learning approaches.
-\vskip 0.2in
-\noindent Kim et al. propose an algorithm in which the ECG signal is pre-processed using baseline drifting adjustment and other methods followed by subjecting it to the ML algorithms \cite{kim:2019}. The ML algorithms are subdivided into regression-based in which SVM and DT are tested and classification based in which ANN and CNN are tested. It has been discovered that DT performs best for ECG-based user authentication. The following figure (Fig. 13) shows the algorithm proposed for individual verification using ECG data. 
-\vskip 0.2in
-\begin{center}
-\includegraphics[scale=0.95]{heart algo.png}
-\captionof{figure}{Algorithm for ECG biometric authentication \cite{kim:2019}}
-\end{center}
-\subsubsection{Summary}
-The following table (Table 1) shows the accuracy of various common unimodal biometric traits against the various characteristics of a biometric system such as Continuity, Performance, etc.
-\vskip 0.2in
-\begin{table}[h!]
-\caption{Comparison of various biometric techniques.  
-High, Medium, Low are denoted by H, M and L \cite{jain:2004}}
-\label{table:1}
-\vskip 0.05in
-\begin{tabularx}{1.0\textwidth} { 
-  | >{\raggedright\arraybackslash}X 
-  | >{\raggedright\arraybackslash}X 
-  | >{\raggedright\arraybackslash}X
-  | >{\raggedright\arraybackslash}X
-  | >{\raggedright\arraybackslash}X|}
- \hline
- \textbf{Biometric Identifier} & \textbf{Universality} & \textbf{Distinctiveness} & \textbf{Performance} & \textbf{Collectability} \\
- \hline
- DNA & H & H & H & L \\
- \hline
- Face & H & L & M & H \\
- \hline
- Fingerprint & M & H & H & M \\ 
- \hline
- Voice & M & L & L & M \\
- \hline
-\end{tabularx}
-\end{table}
-\vskip 0.1in
-\noindent The table shows that a unimodal biometric trait doesn’t provide highly desirable results and hence, the multimodal system was adapted which uses the individual which will be further elaborated in the report.
-\vskip 0.2in
-\subsection{Multimodal Biometric Verification System}
-The most prevalent method for fusing multimodal data is fusion at the score level. The fusion scoring techniques are subdivided into two approaches - combination and classification \cite{telgad:2014}. The fused score for the combinational technique is derived by normalizing the incoming matching score of the various biometric data. For the classification approach, fusion classifiers are used where the input to this classifier is the matching scores of the various biometric data. These classifiers then help with the decision of whether the identity is verified or an imposter.
-\vskip 0.2in
-\subsubsection{Score-level fusion: Combinational Approach}
-Telgad et al. have come with a combination approach for fusion at score level in a multimodal biometric system. The approach makes use of the combination of face and fingerprint biometric traits \cite{telgad:2014}. The subsection explains the separate methods used for score extraction and the combinational method proposed.
-\noindent\paragraph{Face recognition (PCA)} 
-\noindent The paper puts forward the use of PCA for the feature extraction of face modalities. PCA only extracts the relevant information from the face and this algorithm is majorly used for dimension reduction. 
-\vskip 0.2in
-\noindent By treating the image in high dimensional space, the algorithm makes use of eigenvectors and covariance matrix to get the feature vector representing the image. To get the matching score for the feature vector, Euclidean distance is applied to the database. This score is then normalized to be used further for the combinational approach. The accuracy obtained for this method is 92.8\%.
-\noindent\paragraph{Fingerprint recognition (Minutiae matching)} 
-\noindent As discussed in the above section (Sec 3.1.3), fingerprints constitute ridges and valleys. These, upon scanning, are converted to ones and zeros.  Furthermore, complex algorithms work on identifying the characteristics of fingerprints, known as minutiae. The minutiae are stored within the template in the database. For identification or verification purposes, a subset of it needs to be matched with the incoming query image.
-\vskip 0.2in
-\noindent In the verification process, the fingerprint is scanned for the individual and is preprocessed and the minutiae points are detected for the same. Once detected, the matching is done with the euclidean distance matcher and the similarity score is extracted. Let A = \{$m_1$, $m_2$, ..., $m_n$\} and B = \{$m_1$, $m_2$, ..., $m_n$\} be a set of minutiae points extracted from the database and the query images, where $m_i$ = $\{x, y, θ\}$ where x and y are the cartesian coordinates of the minutiae points and θ is the orientation between the points.
-\vskip 0.1in
-\begin{align}
-sd = \sqrt{((x_j - x_i)^2) + ((y_j - y_i)^2)} \le r_o
-\end{align}
-\begin{align}
-dd = min(\mid (\theta_j - \theta_i) \mid, 360 - \mid (\theta_j - \theta_i) \mid) \le \theta_o
-\end{align}
-\vskip 0.1in
-\noindent Minutiae in A and B are said to be matched if the spatial distance (Eq. 3) between them is smaller than a given tolerance and the direction difference  (Eq. 4)  between them is smaller than the angular tolerance. The pairing then generates a similarity score based on the matching and is normalized for the purpose of fusion. The accuracy achieved with this method is 93\%.
-\noindent\paragraph{Fingerprint recognition (Gabor Filter approach)} 
-\noindent The filter-based formula uses a bank of Gabor filters to capture the native and global details of a fingerprint. The matching is then performed through a euclidean distance intermediator between the finger codes of the query image and the database. This approach gave an accuracy of 95\%.
-\noindent\paragraph{Combinational Approach} 
-\noindent Let $MS_{face}$, $MS_{finger1}$, and $MS_{finger2}$ be the matching scores obtained from face and fingerprint modalities respectively. The steps involved for the fusion at score level are: 
-\begin{enumerate}
-    \item \textbf{Score Normalization} \vskip 0.05in \noindent Min-max normalization method is used to scale/normalize each score between the range of 0 and 1 where the min and max value correspond to the minimum and maximum matching score for the particular trait. The normalization score of the traits are denoted as $N_{face}$, $N_{finger1}$, $N_{finger2}$. The equations (Eq. 5-7) shows how the normalized scores are calculated. \begin{align}
-        N_{face} = \frac{MS_{face} - min_{face}}{max_{face} - min_{face}}
-    \end{align}
-    \begin{align}
-        N_{finger1} = \frac{MS_{finger1} - min_{finger1}}{max_{finger1} - min_{finger1}}
-    \end{align}
-    \begin{align}
-        N_{finger2} = \frac{MS_{finger2} - min_{finger2}}{max_{finger2} - min_{finger2}}
-    \end{align}
-    \item \textbf{Generation of Similarity Scores} \vskip 0.05in \noindent The normalized score obtained for the face is through PCA while that for the fingerprint is a similarity score. For the fusion of scores, each score needs to be either a similarity or dissimilarity measure.
-    \item \textbf{Fusion of Score}
-    \begin{align}
-        MS = \alpha * N_{face} + \beta * N_{finger1} + \beta\textit{1} * N_{finger2}
-    \end{align} \noindent From the above equation (Eq. 8), α, β, and β1 are three weight values associated with the normalized scores of the face and the fingerprints. A combination of linear or exponential functions has been used. The value of the matching score (MS) is used as the matching score. If the MS value is above a threshold, the identity is considered to be legitimate else an imposter.
-\end{enumerate}
-\noindent\paragraph{Result} 
-\noindent Within this paper, the fusion at a scoring level using the combinational approach shows a significant improvement in the verification process of an identity than the statistical rule-based methods. In the combinational approach, the accuracy reaches 97\% which is higher than all the individual biometric trait accuracy scores.
-\vskip 0.2in
-\subsubsection{Score-level fusion: Classifier Approach}
-Damousis et al. has written a comparative study of various classification algorithms that are used for the fusion at score level. The study uses the combination of the face and speech biometric traits. The sub-section explains the classifiers used in the study and their respective FAR and FRR followed by a conclusive result \cite{damousis:2012}.
-\noindent\paragraph{SVM} 
-\noindent In this, the SVM classifier combines the matching scores of multi-dimensional vectors of various biometric data. The radial basis kernel function (RBF) has been utilized in this study. The RBF is chosen to handle the non-linear data and it requires lesser hyperparameter tuning. Through experimentation on hyperparameter values, the final trained model was tested. After testing, the SVM model achieved the best performance on the test data with 0\% FAR and 0.25\% FRR.
-\noindent\paragraph{Gaussian Mixture Model (GMM)} 
-\noindent Bayesian classification is based on probability theory and chooses an output based on the most probable or least risk option. A Gaussian distribution provides a good approximation for class model shape in a given feature space. Gaussian distribution works on the assumption that the class model is a model of one class only but if the system is multimodal, the Gaussian distribution cannot capture the underlying information. Thus, in this study, the GMM model is introduced \cite{damousis:2012}. This model is a mixture of several Gaussian distributions and can represent different subclasses within a class. On creation and testing of the model, the GMM model achieved performance on the test data of 0.028\% FAR and 1\% FRR.
-\noindent\paragraph{Artificial Neural Network (ANN)} 
-\noindent The NN is a three-layer forward network in which there are N input neurons, Y hidden neurons, and a single output neuron. The N is equal to the number of the unimodal biometric data that is being used for fusion and Y is set through experimentation. After applying bias on each neuron and setting all the hyperparameters, the model is trained. The final model is tested and after testing, the NN model achieved a performance on the test data with 0\% FAR and 1\% FRR.
-\noindent\paragraph{Result} 
-\noindent Within this study, the fusion at a scoring level using the classification approach shows a significant improvement in the verification process of an identity than the statistical rule-based methods and the unimodal methods.
-\vskip 0.2in
-\subsection{Summary}
-The literature review is subdivided into unimodal and multimodal biometric systems. Under the unimodal biometric system, it covers an in-depth explanation of the existential machine learning approaches for the verification of the biometric traits (DNA, fingerprint, face, and voice) and their limitations. The multimodal biometric system covers an in-depth about the approaches for the fusion at the score level. 
+\subsection{Operational Risk}
+\noindent Operational arises due to malfunctions in internal and external processes. Machine Learning is used in an operational context to detect such malfunctions. Fraud detection is a significant area of focus of operational risk management.
+\\
+\\
+\noindent Money laundering is the malpractice of hiding illegal sources of income by layering lawful transactions on such sources. This is done by routing money through many complicated but legitimate transactions to conceal the actual source. These funds are further used to support criminal, war and terrorist activities.
+\\
+\\
+\noindent Sudjianto et al. employed clustering algorithms to segment customers based on transaction activity [18]. The work combines clustering and profiling to perform unsupervised peer group analysis (PGA) [20]. These segments are used for analyzing if the group of customers were involved in money laundering. Another challenge in identifying fraud is to flag suspicious transactions first and then perform an anti-money laundering investigation. The paper also presents classifiers like LR, SVM, CART, C4.5, C5.0 and RF for determining illegal transactions.
+\\
+\\
+\noindent Villabos et al. has done comparable work on money laundering detection using ANN, SVM and C5.0 based classifiers [20]. The experiments were performed on a Latin American financial institution dataset, and decision tree-based classifiers excelled at the task compared to other models. 
+
+
 \newpage
 \section{\centering Conclusion}
 \vskip 0.25in
