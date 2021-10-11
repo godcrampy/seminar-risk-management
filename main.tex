@@ -142,13 +142,13 @@
 \section{\centering Introduction}
 \end{center}
 \vskip 0.25in
-The banking industry is an essential part of the global economy handling over 150 trillion U.S Dollars worth of global assets. Amidst the economic recession caused due to the COVID-19 pandemic, the total value of banking-related fraud in India doubled from Rs 71,534 Crores in 2018-19 to Rs 1,38,422 Crores in the fiscal year  2020-21 [1]. Global recessions like the 2008 Financial Crisis and the recent COVID-19 pandemic slows down economic output and put a lot of pressure on financial institutions, especially banks. Having a strong infrastructure to manage and mitigate financial risk becomes crucial to keeping the global economic engine running.
+The banking industry is an essential part of the global economy handling over 150 trillion U.S Dollars worth of global assets. Amidst the economic recession caused due to the COVID-19 pandemic, the total value of banking-related fraud in India doubled from Rs 71,534 Crores in 2018-19 to Rs 1,38,422 Crores in the fiscal year  2020-21 \cite{rbi21}. Global recessions like the 2008 Financial Crisis and the recent COVID-19 pandemic slows down economic output and put a lot of pressure on financial institutions, especially banks. Having a strong infrastructure to manage and mitigate financial risk becomes crucial to keeping the global economic engine running.
 \vskip 0.2in
 \noindent
 Over the last few decades, advancements in Machine Learning have been extensively utilized to help in risk management tasks. With almost all financial instruments running in a digital form, machine learning models are employed extensively to detect fraud, predict commodity prices, track inflation etc. A lot of research has been done academically and in the industry since the 2008 Financial Crisis to build state of the art models for various risk management activities. This report presents a summary of multiple machine learning techniques that are used to solve a variety of risk management related problems.
 \vskip 0.2in
 \subsection{Applications}
-Risk management is a 17.1 Billion U.S. Dollar industry responsible for handling inflation, financial frauds, cyber threats, market volatility etc. [2]. Machine Learning models significantly improve the accuracy of existing risk management tasks and can do so globally by working on petabytes of data that the banking sector produces daily. Typical applications of machine learning in risk management tasks include:
+Risk management is a 17.1 Billion U.S. Dollar industry responsible for handling inflation, financial frauds, cyber threats, market volatility etc. \cite{bcc17}. Machine Learning models significantly improve the accuracy of existing risk management tasks and can do so globally by working on petabytes of data that the banking sector produces daily. Typical applications of machine learning in risk management tasks include:
 
 \begin{itemize}
   \item \textbf{Credit Risk:} Determining if the borrower can repay the loan.
@@ -165,7 +165,7 @@ Risk management is a 17.1 Billion U.S. Dollar industry responsible for handling 
 
 \vskip 0.2in
 \subsection{Motivation}
-Risk Management is essential for a country's economy. The Reserve Bank of India (RBI) reported the presence of about Rs. 900 Thousand Crores of Non-Performing Assets (NPA) in 2020 in the Indian banking sector [3]. These are essentially bank loans that are in default or arrears. This amount of loss is roughly equivalent to the cost to build an international airport in India. Machine Learning plays a monumental role in reducing exposure to such risks, which can significantly impact national and global economies.
+Risk Management is essential for a country's economy. The Reserve Bank of India (RBI) reported the presence of about Rs. 900 Thousand Crores of Non-Performing Assets (NPA) in 2020 in the Indian banking sector \cite{rbi20}. These are essentially bank loans that are in default or arrears. This amount of loss is roughly equivalent to the cost to build an international airport in India. Machine Learning plays a monumental role in reducing exposure to such risks, which can significantly impact national and global economies.
 \vskip 0.2in
 \subsection{Objectives}
 This report aims to summarize the work done in risk management in the banking sector from a machine learning point of view. Additionally, this report also presents a case study comparing the performance of different machine learning models to evaluate credit risk on a single dataset.
@@ -301,11 +301,14 @@ As an example, consider the BN in (Fig. \ref{fig:bn}), modelling the conditions 
 \vskip 0.2in
 \subsection{Overview Banking and Risk Management Terminologies}
 \subsubsection{Risk}
-\noindent Risk in finance is defined as uncertainty or volatility of unexpected outcomes, representing the value of assets, equity, or earnings. This includes both positive as well as negative outcomes. A higher return is associated with a more significant variability of outcomes [6]. Risk is broadly classified into Credit Risk, Market Risk, Liquidity Risk and Operational Risk.
+\noindent Risk in finance is defined as uncertainty or volatility of unexpected outcomes, representing the value of assets, equity, or earnings. This includes both positive as well as negative outcomes. A higher return is associated with a more significant variability of outcomes \cite{jorion2000value}. Risk is broadly classified into Credit Risk, Market Risk, Liquidity Risk and Operational Risk.
+\vskip 0.2in
+\subsubsection{Credit Risk}
+\noindent Credit risk is the risk of defaulting on bank loans or failing to comply with the debt obligations of a borrower \cite{kanchu2013risk}. Credit risk also refers to the decline of a borrower's credit quality, which does not directly indicate default but involves a higher probability of default. The book value does not change when the borrower's credit quality diminishes, but its economic value is lower because the probability of default increases \cite{bessis2011risk}.
 
 \vskip 0.2in
 \subsubsection{Market Risk}
-\noindent Market risk is the risk of the movement of market prices. Prices of market parameters that fluctuate randomly include equity indexes, commodity prices, interest rates and foreign exchange rates [4].
+\noindent Market risk is the risk of the movement of market prices. Prices of market parameters that fluctuate randomly include equity indexes, commodity prices, interest rates and foreign exchange rates \cite{bessis2011risk}.
 
 \vskip 0.2in
 \noindent\textbf{Time Series Forecasting} \\
@@ -321,7 +324,7 @@ As an example, consider the BN in (Fig. \ref{fig:bn}), modelling the conditions 
 
 \vskip 0.2in
 \subsubsection{Liquidity Risk}
-\noindent Liquidity is the ease with which a financial instrument can be exchanged for money without losing value. High liquidity indicates a high supply and demand for an asset, which means there will always be buyers and sellers. Liquidity risk is the uncertainty linked with the outcome and possible losses of such an asset transaction into funds [7].
+\noindent Liquidity is the ease with which a financial instrument can be exchanged for money without losing value. High liquidity indicates a high supply and demand for an asset, which means there will always be buyers and sellers. Liquidity risk is the uncertainty linked with the outcome and possible losses of such an asset transaction into funds \cite{tavana2018artificial}.
 
 \vskip 0.2in
 \noindent\textbf{Measuring Liquidity} \\
@@ -337,7 +340,7 @@ As an example, consider the BN in (Fig. \ref{fig:bn}), modelling the conditions 
 
 \vskip 0.2in
 \subsubsection{Operational Risk}
-\noindent Operational Risk is the risk associated with failures in internal procedures, external events, and infrastructure. Fraud detection, cyber security attacks, suspicious transaction detection, money laundering all come under the radar of operational risk [4].
+\noindent Operational Risk is the risk associated with failures in internal procedures, external events, and infrastructure. Fraud detection, cyber security attacks, suspicious transaction detection, money laundering all come under the radar of operational risk \cite{bessis2011risk}.
 
 \vskip 0.2in
 \noindent\textbf{Money Laundering} \\
@@ -361,22 +364,22 @@ Credit Risk analysis is the fundamental problem of the lending economy, with ini
 \noindent A family of statistical frameworks have been adopted since the early 1900s for credit scoring potential borrowers. Among the traditional classifiers, SVMs have yielded significantly better results.
 \\
 \\
-\noindent Bellotti et al. tested the performance of SVMs for credit score classification and contrasted the results with traditional approaches [8]. The paper compares the performance of different algorithms like LR, SVM, LDA and KNN. The work concluded with LDA and SVM reporting the highest AUC scores for the ROC curves when trained on a dataset of about 25,000 over three months of 2004 for credit card based lending [8]. However, SVMs are very sensitive to the outliers of the datasets. Wang et al. introduced a fuzzy SVM algorithm for the classification task to reduce this sensitivity and increase the generalization of the data [13].
+\noindent Bellotti et al. tested the performance of SVMs for credit score classification and contrasted the results with traditional approaches \cite{bellotti2009support}. The paper compares the performance of different algorithms like LR, SVM, LDA and KNN. The work concluded with LDA and SVM reporting the highest AUC scores for the ROC curves when trained on a dataset of about 25,000 over three months of 2004 for credit card based lending \cite{bellotti2009support}. However, SVMs are very sensitive to the outliers of the datasets. Wang et al. introduced a fuzzy SVM algorithm for the classification task to reduce this sensitivity and increase the generalization of the data \cite{wang2005new}.
 
 \vskip 0.2in
 \subsubsection{Neural Networks for Credit Scoring}
-\noindent Early works in the area primarily included the use of SVM based algorithms. However, with larger datasets, training becomes computationally expensive [10]. ANNs have been widely researched for credit scoring [11, 12]. Several Ensemble methods have been employed to improve the accuracy of the ANN models [9].
+\noindent Early works in the area primarily included the use of SVM based algorithms. However, with larger datasets, training becomes computationally expensive \cite{harris2015credit}. ANNs have been widely researched for credit scoring \cite{li2002neural, hu2006ann}. Several Ensemble methods have been employed to improve the accuracy of the ANN models \cite{tsai2008using}.
 \\
 \\
-Angelini et al. used ANNs to determine credit risk among small businesses as credit borrowers [14]. The work proposes a real-world dataset of Italian businesses and provides a comprehensive network performance analysis for various neuron configurations.
+Angelini et al. used ANNs to determine credit risk among small businesses as credit borrowers \cite{angelini2008neural}. The work proposes a real-world dataset of Italian businesses and provides a comprehensive network performance analysis for various neuron configurations.
 \\
 \\
-Tsai et al. employed a single MLP classifier as a benchmark for prediction accuracy and compared the performance with multiple classifiers in the ensembled form [9]. The paper also reports the variation in accuracy by modifying training configuration parameters like the number of epochs, network architecture, and the number of classifiers for ensembling. The analysis is performed on the publicly available Australian, German and Japanese credit datasets.
+Tsai et al. employed a single MLP classifier as a benchmark for prediction accuracy and compared the performance with multiple classifiers in the ensembled form \cite{tsai2008using}. The paper also reports the variation in accuracy by modifying training configuration parameters like the number of epochs, network architecture, and the number of classifiers for ensembling. The analysis is performed on the publicly available Australian, German and Japanese credit datasets.
 
 
 \vskip 0.2in
 \subsection{Market Risk}
-\noindent Market risk deals with the volatility of indices. Value at Risk (VAR) estimates the worst loss that will not exceed in a particular time frame. It captures the combined effect of underlying volatility and exposure to financial risks. Volatility estimation is a part of the time series forecasting domain. ANNs excel at these learning problems compared to traditional methods. A commonly used forecasting framework for time series is the Generalized Autoregressive Conditional Heteroskedasticity (GARCH) model [16]. It is derived from the Autoregressive Conditional Heteroscedasticity (ARCH) model, which predicts the volatility of innovation or error term as a function of previous error terms.
+\noindent Market risk deals with the volatility of indices. Value at Risk (VAR) estimates the worst loss that will not exceed in a particular time frame. It captures the combined effect of underlying volatility and exposure to financial risks. Volatility estimation is a part of the time series forecasting domain. ANNs excel at these learning problems compared to traditional methods. A commonly used forecasting framework for time series is the Generalized Autoregressive Conditional Heteroskedasticity (GARCH) model \cite{bollerslev1986generalized}. It is derived from the Autoregressive Conditional Heteroscedasticity (ARCH) model, which predicts the volatility of innovation or error term as a function of previous error terms.
 \\
 \\
 The volatility at time \(t\) is given as a function of prior error terms as:
@@ -391,7 +394,7 @@ The volatility at time \(t\) is given as a function of prior error terms as:
     \sigma_t^2 = \ \omega + \sum_{i = 1}^{n} \alpha_i \epsilon_{t - i}^2 + \sum_{i = 1}^{p} \beta_i \sigma_{t - i}^2
 \end{equation}
 
-\noindent Zhang et al. proposed a model to calculate the VAR (volatility) in an index from the GARCH model using ANNs [15]. The paper also presents a comparative analysis with other models like just GARCH and SVM to predict volatility.
+\noindent Zhang et al. proposed a model to calculate the VAR (volatility) in an index from the GARCH model using ANNs \cite{zhang2017calculating}. The paper also presents a comparative analysis with other models like just GARCH and SVM to predict volatility.
 
 \vskip 0.2in
 \subsection{Liquidity Risk}
@@ -401,7 +404,7 @@ The volatility at time \(t\) is given as a function of prior error terms as:
 \noindent Machine learning can solve several liquidity risk factors. ANNs can be used to estimate a risk measure. Approximation of general risk trends and discovery of principal risk determinants can be made using ANNs. BN can be used to predict the probability of a liquidity risk event happening.  By using distributive estimation, the ANN and BN implementations could identify the most critical liquidity risk factors.
 \\
 \\
-\noindent Tavana et al. used a combination of ANN and BN to determine liquidity risk (LCR and NSFR) from a real-world dataset of a U.S. bank focusing mainly on loans for eight consecutive years. The ANN was used to approximate the general trend of liquidity risk and find the influential factors. Further, the BN was used to find the most influential factor from the data filtered by the ANN [19].
+\noindent Tavana et al. used a combination of ANN and BN to determine liquidity risk (LCR and NSFR) from a real-world dataset of a U.S. bank focusing mainly on loans for eight consecutive years. The ANN was used to approximate the general trend of liquidity risk and find the influential factors. Further, the BN was used to find the most influential factor from the data filtered by the ANN \cite{tavana2018artificial}.
 
 \vskip 0.2in
 \subsection{Operational Risk}
@@ -411,11 +414,228 @@ The volatility at time \(t\) is given as a function of prior error terms as:
 \noindent Money laundering is the malpractice of hiding illegal sources of income by layering lawful transactions on such sources. This is done by routing money through many complicated but legitimate transactions to conceal the actual source. These funds are further used to support criminal, war and terrorist activities.
 \\
 \\
-\noindent Sudjianto et al. employed clustering algorithms to segment customers based on transaction activity [18]. The work combines clustering and profiling to perform unsupervised peer group analysis (PGA) [20]. These segments are used for analyzing if the group of customers were involved in money laundering. Another challenge in identifying fraud is to flag suspicious transactions first and then perform an anti-money laundering investigation. The paper also presents classifiers like LR, SVM, CART, C4.5, C5.0 and RF for determining illegal transactions.
+\noindent Sudjianto et al. employed clustering algorithms to segment customers based on transaction activity \cite{sudjianto2010statistical}. The work combines clustering and profiling to perform unsupervised peer group analysis (PGA) \cite{bolton2001peer}. These segments are used for analyzing if the group of customers were involved in money laundering. Another challenge in identifying fraud is to flag suspicious transactions first and then perform an anti-money laundering investigation. The paper also presents classifiers like LR, SVM, CART, C4.5, C5.0 and RF for determining illegal transactions.
 \\
 \\
-\noindent Villabos et al. has done comparable work on money laundering detection using ANN, SVM and C5.0 based classifiers [20]. The experiments were performed on a Latin American financial institution dataset, and decision tree-based classifiers excelled at the task compared to other models. 
+\noindent Villalobos et al. has done comparable work on money laundering detection using ANN, SVM and C5.0 based classifiers \cite{villalobos2017statistical}. The experiments were performed on a Latin American financial institution dataset, and decision tree-based classifiers excelled at the task compared to other models. 
 
+\begin{table}[H]
+\captionof{table}{Literature Survey Summary}
+\label{table2}
+\vskip 0.1in
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{ | p{1.9cm} | p{1.6cm}| p{2.1cm} | p{1.4cm}| p{2.3cm}| p{1.9cm}| p{2.2cm}| }
+\hline
+\textbf{Task} & \textbf{Author}  & \textbf{Title}  & \textbf{Model} & \textbf{Performance Measure}  & \textbf{Dataset}  & \textbf{Features} \\
+  \hline
+Credit Risk &
+Bellotti et al. \cite{bellotti2009support} &
+Support vector machines for credit scoring and discovery of significant features &
+SVM, LR, KNN, LDA &
+AUC &
+Credit card history of 25,000 customers over a three month period &
+34 features taken from each customer’s original application and features extracted from a credit reference agency
+\\
+ \hline
+ Credit Risk &
+Tsai et al. \cite{tsai2008using} &
+Using neural network ensembles for bankruptcy prediction and credit scoring &
+MLP, Ensembled MLP &
+Accuracy, Type I and Type II errors &
+Australian, German and Japanese credit datasets &
+20 attributes including age, gender, amount and duration of credit and job status
+\\
+\hline
+
+Credit Risk &
+Wang et al. \cite{wang2005new} &
+A new fuzzy support vector machine to evaluate credit risk &
+Fuzzy SVM &
+Type I and Type II and overall accuracy &
+FAME, Japanese credit dataset &
+12 features for FAME, 15 for the Japanese credit dataset 
+\\
+\hline
+
+
+\end{tabular}
+\egroup
+\end{table}
+\newpage
+\begin{table}[H]
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{ | p{1.9cm} | p{1.6cm}| p{2.1cm} | p{1.4cm}| p{2.3cm}| p{1.9cm}| p{2.2cm}| }
+\hline
+\textbf{Task} & \textbf{Author}  & \textbf{Title}  & \textbf{Model} & \textbf{Performance Measure}  & \textbf{Dataset}  & \textbf{Features} \\
+ \hline
+
+Credit Risk &
+Angelini et al. \cite{angelini2008neural} &
+A neural network approach for credit risk evaluation &
+ANN &
+Error &
+Italian small business dataset &
+15 features derived from the balance sheet of the small businesses
+\\
+\hline
+
+Market Risk &
+Zhang et al. \cite{zhang2017calculating} &
+Calculating Value-at-Risk for high-dimensional time series using a nonlinear random mapping model &
+GARCH, ANN &
+p-value &
+China Securities Index 300 from April 8, 2005, to May 28, 2015 &
+Daily closing price
+\\
+\hline
+
+Liquidity Risk &
+Tavana et al. \cite{tavana2018artificial} &
+An Artificial Neural Network and Bayesian Network model for liquidity risk assessment in banking &
+ANN, BN &
+MSE &
+Dataset of a U.S. bank focusing mainly on loans from 2004 to 2011 &
+Liquid assets of bank, Current liabilities, short and long term deposits, total assets 
+\\
+\hline
+
+Operational Risk &
+Sudjianto et al. \cite{sudjianto2010statistical} &
+Statistical methods for fighting financial crimes &
+LR, SVM, DT, RF, PGA &
+Error &
+AML Dataset &
+Account number, transaction amount, date, description
+\\
+\hline
+
+
+Operational Risk &
+Villalobos et al. \cite{villalobos2017statistical} &
+A statistical and machine learning model to detect money laundering: an application &
+ANN, SVM, C5.0 &
+Accuracy, AUC &
+Latin American Financial Institution data &
+Customer nationality, type of entity, source of assets, reputation risk score, owners risk rating 
+\\
+\hline
+
+
+\end{tabular}
+\egroup
+\end{table}
+
+\vskip 0.2in
+\subsection{Summary}
+This chapter presents a comprehensive survey of various types of machine learning and statistical techniques used to solve risk management problems in finance. An interesting observation is that certain types of machine learning models perform better at specific risk management tasks. This is reflected by the number of academic works published for such algorithm-problem pairs. For example, SVMs have been extensively used for credit scoring tasks while tree-based classifiers excel at fraud detection tasks. Nevertheless, ANN seems to have found applications in all types of problems explored and produced state of the art results in many banking problems.
+
+
+\newpage
+\section{\centering Case Study in Credit Risk}
+\vskip 0.25in
+This chapter reports and analyzes the performance of various machine learning models on the credit risk classification task. The publicly available German Credit Score dataset is used to train the following classifiers: LR, LDA, KNN, CART, C5.0, NB, RF, SVM and ANN.
+
+\vskip 0.2in
+\subsection{German Credit Dataset}
+This dataset classifies customers as having good or bad credit potential by a set of attributes. It contains 1000 instances of data points and 20 attributes for each data point. These features capture information like:
+\begin{itemize}
+  \item Status of bank accounts
+  \item Purpose of loan
+  \item Amount and duration of loan
+  \item Age, gender and employment of the customer
+  \item Credit history
+  \item Mode of repayment
+\end{itemize}
+
+\vskip 0.2in
+\subsection{Exploratory Data Analysis (EDA)}
+\subsubsection{Distribution of Good and Bad Credit}
+\noindent The dataset contains 700 examples for the "Good Credit" rating and 300 examples for the "Bad credit" rating. This creates an imbalance in the dataset, which can degrade classification quality. Random oversampling is done to rebalance the dataset before feeding it to the models. \cite{japkowicz2002class}
+
+
+\begin{center}
+\includegraphics[scale=0.6]{dist-1.png}
+\captionof{figure}{Distribution of good and bad credit}
+\label{fig:dist1}
+\end{center}
+
+\subsubsection{Age Distribution}
+\noindent (Fig. \ref{fig:dist2}) shows the distribution of loans with age. The distribution is shown based on the classification target as well as a combined graph. An interesting observation is that bad credit loans taper off quickly as age increases compared to the good credit loans, thus indicating that the younger audience may have a significant contribution in non-payment of loans.
+
+\begin{center}
+\includegraphics[scale=0.4]{dist-2.png}
+\captionof{figure}{Distribution of credit based on age}
+\label{fig:dist2}
+\end{center}
+
+\subsubsection{House Type Distribution}
+
+\begin{center}
+\includegraphics[scale=0.4]{dist-3.png}
+\captionof{figure}{Distribution of credit based on purpose}
+\label{fig:dist3}
+\end{center}
+
+\noindent People who own their own house are more likely to pay off their loans. On the other hand, there is almost a 40\% chance that the loan will have defaulted for the other two classes.
+
+\subsubsection{Loan Purpose Distribution}
+
+\begin{center}
+\includegraphics[scale=0.6]{dist-4.png}
+\captionof{figure}{Distribution of credit based on purpose}
+\label{fig:dist4}
+\end{center}
+
+\noindent Loans are mainly taken to buy a car or TV. Credit taken to buy TV/Radio has the least risk of default. Education and Vacation loans carry a higher credit risk, which parallels with banks charging a higher rate of interest for education loans to account for the risk of default.
+
+
+\subsection{Results}
+Before training, the minority class was oversampled to meet the size of the majority class. The data was split into a 1:4 ratio with the larger portion used to train the models, and the smaller portion is used for evaluation. Five trials were carried out for each classifier, and their average performance metrics are reported in Table \ref{table:4}.
+
+\vskip 0.2in
+\begin{table}[h!]
+\caption{Performance of classifiers on German Credit Dataset}
+\label{table:4}
+\begin{tabularx}{1.0\textwidth} { 
+  | >{\raggedright\arraybackslash}X 
+  | >{\raggedright\arraybackslash}X 
+  | >{\raggedright\arraybackslash}X 
+  | >{\raggedright\arraybackslash}X|}
+ \hline
+ \textbf {Model} & \textbf{Accuracy} & \textbf{F1 Score} & \textbf{AUC} \\
+ \hline
+ \textbf{LR} & 0.7285 & 0.7300 & 0.7292 \\
+\hline
+\textbf{LDA} & 0.7188 & 0.7196 & 0.7196  \\
+\hline
+\textbf{KNN} & 0.7240 & 0.7406 & 0.7226 \\
+\hline
+\textbf{CART} & 0.8417 & 0.8529 & 0.8387 \\
+\hline
+\textbf{C5.0} & 0.8428 & 0.8557 & 0.8408 \\
+\hline
+\textbf{RF} & 0.8754 & 0.8820 & 0.8746 \\
+\hline
+\textbf{NB} & 0.7023 & 0.7112 & 0.7019 \\
+\hline
+\textbf{SVM} & 0.7955 & 0.8054 & 0.7959 \\
+\hline
+\textbf{ANN} & 0.7509 & 0.7586 & 0.7505 \\
+\hline
+\end{tabularx}
+\end{table}
+
+\noindent For each model, Receiver Operating Characteristics (ROC) curves are plotted in (Fig. \ref{fig:roc}).
+
+\begin{center}
+\includegraphics[scale=0.7]{roc.png}
+\captionof{figure}{ROC for classifiers}
+\label{fig:roc}
+\end{center}
+
+\noindent In summary, both the tree-based algorithms (CART and C5.0) performed better than other models with an F1 score greater than 0.8. When ensemble learning is used in the RF classifier, the best results are achieved with a 0.88 F1 score, which is reflected in the ROC curve. SVM and ANN are the next best classifiers for the learning task respectively.
 
 \newpage
 \section{\centering Conclusion}
