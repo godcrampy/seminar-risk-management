@@ -33,7 +33,7 @@
 \newcommand\xrowht[2][0]{\addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}}
 \usepackage[margin=1in]{geometry}
 \usepackage{tocloft}
-
+\hypersetup{draft}
 %  \pagestyle{empty}
 \setmainfont{Times New Roman}
 \captionsetup[figure]{font={small, bf},labelfont={bf},name={Fig.},labelsep=period}
@@ -72,7 +72,7 @@
 \renewcommand\nomgroup[1]{%
   \item[\bfseries
   \ifstrequal{#1}{E}{Non-English Alphabets}{%
-  \ifstrequal{#1}{H}{English Alphabets}{%
+  \ifstrequal{#1}{C}{English Alphabets}{%
   \ifstrequal{#1}{I}{Abbreviations}{%
   \ifstrequal{#1}{O}{Other symbols}{}}}}%
 ]}
@@ -92,7 +92,7 @@
 \nomenclature[E]{\(\sum\)}{Uppercase Sigma}
 \nomenclature[E]{\(\omega\)}{Omega}
 
-\nomenclature[H]{\(e\)}{Euler's constant \nomunit{\(2.71828\)}}
+\nomenclature[C]{\(e\)}{Euler's constant \nomunit{\(2.71828\)}}
 
 
 
@@ -407,7 +407,7 @@ The volatility at time \(t\) is given as a function of prior error terms as:
 
 \vskip 0.2in
 \subsection{Operational Risk}
-\noindent Operational arises due to malfunctions in internal and external processes. Machine Learning is used in an operational context to detect such malfunctions. Fraud detection is a significant area of focus of operational risk management.
+\noindent Operational Risk arises due to malfunctions in internal and external processes. Machine Learning is used in an operational context to detect such malfunctions. Fraud detection is a significant area of focus of operational risk management.
 \\
 \\
 \noindent Money laundering is the malpractice of hiding illegal sources of income by layering lawful transactions on such sources. This is done by routing money through many complicated but legitimate transactions to conceal the actual source. These funds are further used to support criminal, war and terrorist activities.
