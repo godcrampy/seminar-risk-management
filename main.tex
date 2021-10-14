@@ -114,6 +114,7 @@
 \nomenclature[I]{\(MSE\)}{Mean Squared Error}
 \nomenclature[I]{\(NSFR\)}{Net Stable Funding Ratio}
 \nomenclature[I]{\(NPA\)}{Non Performing Assets}
+\nomenclature[I]{\(OHLC\)}{Open-High-Low-Close Chart}
 \nomenclature[I]{\(RBI\)}{The Reserve Bank of India}
 \nomenclature[I]{\(RF\)}{Random Forest}
 \nomenclature[I]{\(ROC\)}{Receiver Operating Characteristics}
@@ -127,7 +128,7 @@
 \addcontentsline{toc}{section}{Abstract}
 \end{center}
 \textit{
-{\fontsize{10pt}{10pt}\selectfont Banking forms the backbone of modern society. With banks serving millions of customers from every corner of the world, it becomes crucial for banks to stay competitive, sustainable and at the same time work under compliance constraints. Risk management is an area of study which aims to reduce fraud, improve processes and decrease losses to the banking industry. Several state-of-the-art machine learning and statistical models are used to identify, analyze and mitigate risks for the organizations. These models are exceedingly improved by the terabytes of data that banks generate daily. This report presents a comprehensive analysis of various techniques used for risk management in the banking sector. A comparative study is performed on various machine learning models and their strengths for different risk management tasks. Finally, a case study is also presented highlighting the complete process of a sample risk management task for credit scoring.
+{\fontsize{10pt}{10pt}\selectfont Banking forms the backbone of modern society. With banks serving millions of customers from every corner of the world, it becomes crucial for banks to stay competitive, sustainable and at the same time work under compliance constraints. Risk management is an area of study which aims to reduce fraud, improve processes and decrease losses to the banking industry. Several state-of-the-art machine learning and statistical models are used to identify, analyze and mitigate risks for the organizations. These models are exceedingly improved by the terabytes of data that banks generate daily. This research presents a comprehensive analysis of various techniques used for risk management in the banking sector. A comparative study is performed on various machine learning models and their strengths for different risk management tasks. Finally, a case study is also presented highlighting the complete process of a sample risk management task for credit scoring.
 }
 }
 \vskip 0.1in
@@ -145,7 +146,7 @@
 The banking industry is an essential part of the global economy handling over 150 trillion U.S Dollars worth of global assets. Amidst the economic recession caused due to the COVID-19 pandemic, the total value of banking-related fraud in India doubled from Rs 71,534 Crores in 2018-19 to Rs 1,38,422 Crores in the fiscal year  2020-21 \cite{rbi21}. Global recessions like the 2008 Financial Crisis and the recent COVID-19 pandemic slows down economic output and put a lot of pressure on financial institutions, especially banks. Having a strong infrastructure to manage and mitigate financial risk becomes crucial to keeping the global economic engine running.
 \vskip 0.2in
 \noindent
-Over the last few decades, advancements in Machine Learning have been extensively utilized to help in risk management tasks. With almost all financial instruments running in a digital form, machine learning models are employed extensively to detect fraud, predict commodity prices, track inflation etc. A lot of research has been done academically and in the industry since the 2008 Financial Crisis to build state of the art models for various risk management activities. This report presents a summary of multiple machine learning techniques that are used to solve a variety of risk management related problems.
+Over the last few decades, advancements in Machine Learning have been extensively utilized to help in risk management tasks. With almost all financial instruments running in a digital form, machine learning models are employed extensively to detect fraud, predict commodity prices, track inflation etc. A lot of research has been done academically and in the industry since the 2008 Financial Crisis to build state of the art models for various risk management activities. This work  presents a summary of multiple machine learning techniques that are used to solve a variety of risk management related problems.
 \vskip 0.2in
 \subsection{Applications}
 Risk management is a 17.1 Billion U.S. Dollar industry responsible for handling inflation, financial frauds, cyber threats, market volatility etc. \cite{bcc17}. Machine Learning models significantly improve the accuracy of existing risk management tasks and can do so globally by working on petabytes of data that the banking sector produces daily. Typical applications of machine learning in risk management tasks include:
@@ -168,10 +169,10 @@ Risk management is a 17.1 Billion U.S. Dollar industry responsible for handling 
 Risk Management is essential for a country's economy. The Reserve Bank of India (RBI) reported the presence of about Rs. 900 Thousand Crores of Non-Performing Assets (NPA) in 2020 in the Indian banking sector \cite{rbi20}. These are essentially bank loans that are in default or arrears. This amount of loss is roughly equivalent to the cost to build an international airport in India. Machine Learning plays a monumental role in reducing exposure to such risks, which can significantly impact national and global economies.
 \vskip 0.2in
 \subsection{Objectives}
-This report aims to summarize the work done in risk management in the banking sector from a machine learning point of view. Additionally, this report also presents a case study comparing the performance of different machine learning models to evaluate credit risk on a single dataset.
+This paper aims to summarize the work done in risk management in the banking sector from a machine learning point of view. Additionally, this work also presents a case study comparing the performance of different machine learning models to evaluate credit risk on a single dataset.
 \vskip 0.2in
 \subsection{Organization of Report}
-This report is subdivided into five chapters. The first chapter gives an overview of the banking industry along with the applications, motivations and objectives of this report. The second chapter provides the necessary theoretical background on machine learning algorithms and concepts related to banking and risk management. The third chapter presents a comparative study of various academic work done for different risk management tasks using machine learning. The fourth chapter is a case study for a particular risk management problem that builds upon the previous chapters and reports the results of various machine learning algorithms. The final chapter concludes all the findings of the seminar report in a concise format.
+This report is subdivided into five chapters. The first chapter gives an overview of the banking industry along with the applications, motivations and objectives of this report. The second chapter provides the necessary theoretical background on machine learning algorithms and concepts related to banking and risk management. The third chapter presents a comparative study of various academic work done for different risk management tasks using machine learning. The fourth chapter is a case study for a particular risk management problem that builds upon the previous chapters and reports the results of various machine learning algorithms. The final chapter concludes all the findings of the seminar report in a concise format and present future scope.
 \newpage
 
 \section{\centering{Theoretical Background}}
@@ -179,10 +180,13 @@ This report is subdivided into five chapters. The first chapter gives an overvie
 This chapter is subdivided into two parts. The first part is a brief outline of standard machine learning models and terminologies. The second part explains various terminologies related to finance, banking and risk management.
 \vskip 0.2in
 \subsection{Machine Learning Algorithms}
+
+\noindent This section focuses on the machine learning algorithms that are concerning risk prediction. A brief introduction to each of the algorithm is given which serves as a prerequisite to the following chapters.
+
 \subsubsection{Logistic Regression (LR)}
 \begin{center}
-\includegraphics[scale=0.3]{lr.png}
-\captionof{figure}{Logistic function curve}
+\includegraphics[scale=0.45]{lr-paper.png}
+\captionof{figure}{Logistic function curve \cite{jupudi:2018}}
 \label{fig:lr}
 \end{center}
 In statistics, LR models the probability of a specific class or event happening. This probability estimate is further used for binary classification and with minor extensions to perform multi-class classification. The algorithm is based on a logistic function which is a sigmoidal curve. It takes a real-valued input and outputs a number between zero and unity (Fig. \ref{fig:lr}). This output is interpreted as the probability of the task. Mathematically, the logistic function is represented as follows:
@@ -224,8 +228,8 @@ If \(t\) is derived from a single independent linearly varying variable \(x\), t
 \vskip 0.2in
 \subsubsection{Support Vector Machine (SVM)}
 \begin{center}
-\includegraphics[scale=1.8]{svm-1.png}
-\captionof{figure}{Hyperplane construction in SVM}
+\includegraphics[scale=0.2]{svm - paper.png}
+\captionof{figure}{Hyperplane construction in SVM \cite{ruiz:2014}}
 \label{fig:svm-1}
 \end{center}
 
@@ -233,8 +237,8 @@ If \(t\) is derived from a single independent linearly varying variable \(x\), t
 
 \vskip 0.2in
 \begin{center}
-\includegraphics[scale=0.2]{svm-2.png}
-\captionof{figure}{Kernel mapping to linear boundaries}
+\includegraphics[scale=0.3]{kernel mapping.png}
+\captionof{figure}{Kernel mapping to linear boundaries (a) Input Image (b) Feature Space \cite{ruiz:2014}}
 \label{fig:svm-2}
 \end{center}
 \noindent 
@@ -244,8 +248,8 @@ For non-linear data, a kernel is used, which is a function mapping the data into
 \vskip 0.2in
 \subsubsection{K-Nearest Neighbours (KNN)}
 \begin{center}
-\includegraphics[scale=0.3]{knn.png}
-\captionof{figure}{Example of KNN}
+\includegraphics[scale=0.48]{knn - paper.png}
+\captionof{figure}{Example of KNN \cite{alaliyat:2021}}
 \label{fig:knn}
 \end{center}
 \noindent KNN is a supervised algorithm for supervised classification and regression tasks. KNN works by finding the \(K\) closest data points to a given query point. The output is the most frequent label for classification and the mean of the label for regression tasks. The value of \(K\) is user-defined as a hyperparameter, and the distance metric is euclidean or hamming distance depending on the context of the dataset.
@@ -266,8 +270,8 @@ As an example, consider the BN in (Fig. \ref{fig:bn}), modelling the conditions 
 \vskip 0.2in
 \subsubsection{Linear Discriminant Analysis (LDA)}
 \begin{center}
-\includegraphics[scale=0.8]{lda.png}
-\captionof{figure}{Fisher's LDA Visualization}
+\includegraphics[scale=0.65]{lda - paper.png}
+\captionof{figure}{Fisher's LDA Visualization \cite{cheng:2014}}
 \label{fig:lda}
 \end{center}
 
@@ -279,8 +283,8 @@ As an example, consider the BN in (Fig. \ref{fig:bn}), modelling the conditions 
 \noindent ANNs are machine learning models mimicking biological neural networks. An ANN consists of neuron layers where each layer contains an array of artificial neurons. These neurons are essentially mathematical functions that take input values from previous layers and are tunable using a set of weights and biases. ANNs are used for supervised, unsupervised as well as reinforcement learning tasks.
 
 \begin{center}
-\includegraphics[scale=0.38]{ann.png}
-\captionof{figure}{Single neuron in an ANN}
+\includegraphics[scale=0.65]{ann - paper.png}
+\captionof{figure}{Single neuron in an ANN \cite{yigit:2013}}
 \label{fig:ann}
 \end{center}
 
@@ -394,6 +398,9 @@ The volatility at time \(t\) is given as a function of prior error terms as:
 \end{equation}
 
 \noindent Zhang et al. proposed a model to calculate the VAR (volatility) in an index from the GARCH model using ANNs \cite{zhang2017calculating}. The paper also presents a comparative analysis with other models like just GARCH and SVM to predict volatility.
+\\
+\\
+\noindent Dierckx et al. used traditional machine learning models like SVM and LR to predict the volatility of AAPL stock using features like Market Data and Public News for the stock. A high correlation and subsequent classifier accuracy was achieved for prediction using market data which included indicators like stock volume, (Open-High-Low-Close Chart) OHLC, volatility and moving averages \cite{dierckx2020using}.
 
 \vskip 0.2in
 \subsection{Liquidity Risk}
@@ -403,7 +410,7 @@ The volatility at time \(t\) is given as a function of prior error terms as:
 \noindent Machine learning can solve several liquidity risk factors. ANNs can be used to estimate a risk measure. Approximation of general risk trends and discovery of principal risk determinants can be made using ANNs. BN can be used to predict the probability of a liquidity risk event happening.  By using distributive estimation, the ANN and BN implementations could identify the most critical liquidity risk factors.
 \\
 \\
-\noindent Tavana et al. used a combination of ANN and BN to determine liquidity risk (LCR and NSFR) from a real-world dataset of a U.S. bank focusing mainly on loans for eight consecutive years. The ANN was used to approximate the general trend of liquidity risk and find the influential factors. Further, the BN was used to find the most influential factor from the data filtered by the ANN \cite{tavana2018artificial}.
+\noindent Tavana et al. used a combination of ANN and BN to determine liquidity risk (LCR and NSFR) from a real-world dataset of a U.S. bank focusing mainly on loans for eight consecutive years. The ANN was used to approximate the general trend of liquidity risk and find the influential factors. Further, the BN was used to find the most influential factor from the data filtered by the ANN \cite{tavana2018artificial}. Yang et al. used VAR to predict Liquidity Risk using SVMs. The work also introduces a Liquidity VAR measure which is proved to be a better indicator for portraying liquidity risk \cite{yang2009density}.
 
 \vskip 0.2in
 \subsection{Operational Risk}
@@ -434,7 +441,7 @@ Support vector machines for credit scoring and discovery of significant features
 SVM, LR, KNN, LDA &
 AUC &
 Credit card history of 25,000 customers over a three month period &
-34 features taken from each customer’s original application and features extracted from a credit reference agency
+34 features taken from each customer’s original application and features extracted from a credit agency
 \\
  \hline
  Credit Risk &
@@ -458,18 +465,6 @@ FAME, Japanese credit dataset &
 \hline
 
 
-\end{tabular}
-\egroup
-\end{table}
-\newpage
-\begin{table}[H]
-\bgroup
-\def\arraystretch{1.5}
-\begin{tabular}{ | p{1.9cm} | p{1.6cm}| p{2.1cm} | p{1.4cm}| p{2.3cm}| p{1.9cm}| p{2.2cm}| }
-\hline
-\textbf{Task} & \textbf{Author}  & \textbf{Title}  & \textbf{Model} & \textbf{Performance Measure}  & \textbf{Dataset}  & \textbf{Features} \\
- \hline
-
 Credit Risk &
 Angelini et al. \cite{angelini2008neural} &
 A neural network approach for credit risk evaluation &
@@ -489,6 +484,38 @@ China Securities Index 300 from April 8, 2005, to May 28, 2015 &
 Daily closing price
 \\
 \hline
+\end{tabular}
+\egroup
+\end{table}
+\newpage
+\begin{table}[H]
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{ | p{1.9cm} | p{1.6cm}| p{2.1cm} | p{1.4cm}| p{2.3cm}| p{1.9cm}| p{2.2cm}| }
+\hline
+\textbf{Task} & \textbf{Author}  & \textbf{Title}  & \textbf{Model} & \textbf{Performance Measure}  & \textbf{Dataset}  & \textbf{Features} \\
+
+\hline
+Market Risk &
+Dierckx et al. \cite{dierckx2020using} &
+Using Machine Learning and Alternative Data to Predict Movements in Market Risk &
+LR, SVM &
+Balanced Accuracy &
+24 Month history for AAPL stock and related news from Google News and Wikipedia &
+Market volatility, Moving average, OHLC chart, Google news count and Wikipedia page views
+\\
+\hline
+
+Liquidity Risk &
+Yang et al. \cite{yang2009density} &
+Density Function Estimation Based on SVM: An Application in Estimating Liquidity Risk in Stock Market &
+SVM &
+MSE &
+One year of trading data from stocks  of Shanghai and Shenzhen Stock Exchanges &
+Historic data of share prices on the Chinese stock markets including stock code, symbol and volume of outstanding shares
+\\
+\hline
+
 
 Liquidity Risk &
 Tavana et al. \cite{tavana2018artificial} &
@@ -506,10 +533,24 @@ Statistical methods for fighting financial crimes &
 LR, SVM, DT, RF, PGA &
 Error &
 AML Dataset &
-Account number, transaction amount, date, description
+Account number, transaction amount, post date and description
 \\
 \hline
 
+\end{tabular}
+\egroup
+\end{table}
+
+
+\newpage
+\begin{table}[H]
+\bgroup
+\def\arraystretch{1.5}
+\begin{tabular}{ | p{1.9cm} | p{1.6cm}| p{2.1cm} | p{1.4cm}| p{2.3cm}| p{1.9cm}| p{2.2cm}| }
+\hline
+\textbf{Task} & \textbf{Author}  & \textbf{Title}  & \textbf{Model} & \textbf{Performance Measure}  & \textbf{Dataset}  & \textbf{Features} \\
+
+\hline
 
 Operational Risk &
 Villalobos et al. \cite{villalobos2017statistical} &
@@ -525,6 +566,7 @@ Customer nationality, type of entity, source of assets, reputation risk score, o
 \end{tabular}
 \egroup
 \end{table}
+
 
 \vskip 0.2in
 \subsection{Summary}
@@ -573,7 +615,7 @@ This dataset classifies customers as having good or bad credit potential by a se
 
 \begin{center}
 \includegraphics[scale=0.4]{dist-3.png}
-\captionof{figure}{Distribution of credit based on purpose}
+\captionof{figure}{Distribution of credit based on house type}
 \label{fig:dist3}
 \end{center}
 
@@ -637,10 +679,12 @@ Before training, the minority class was oversampled to meet the size of the majo
 \noindent In summary, both the tree-based algorithms (CART and C5.0) performed better than other models with an F1 score greater than 0.8. When ensemble learning is used in the RF classifier, the best results are achieved with a 0.88 F1 score, which is reflected in the ROC curve. SVM and ANN are the next best classifiers for the learning task respectively.
 
 \newpage
-\section{\centering Conclusion}
+\section{\centering Conclusion and Future Scope}
 \vskip 0.25in
 Throughout all modern human history, banking has been an essential factor in fueling innovation and betterment of the society. With the coming of the information age, increased competition and modern banking facilities available to the commoner, risk management plays a vital role in building a sustainable and compliant banking business. Banks generate several terabytes of data that state-of-the-art machine learning models can leverage to make data-driven decisions. In this report, various machine learning applications for risk management in banking are presented. This work does a comprehensive survey of academic research for different risk management areas viz. credit risk, operational risk, market risk and liquidity risk. A case study is also presented comparing the performance of various classifiers like ANNs, DTs, SVM and others on a single dataset for credit scoring tasks.
 
+\subsection{Future Scope}
+\noindent Machine learning's future in the banking and financial industries is widely known, and it's predicted that risk management will attempt to operate machine learning techniques to enhance their skills as well. The research on the application of machine learning in risk management in the banking industry was assessed, and evaluated in this paper. The bulk of the study seems to be focused on credit risk management. This might be explained by the fact that credit concerns are seen as the most severe threat to a bank. Machine learning has been used to anticipate volatility, interest rate curves, and market regime shift in market risk research. Despite the increasing focus in the sector as a result of regulators' concerns, there has been little study on liquidity risk. Given the consequences of a liquidity risk event materialising on a bank's profitability, liquidity risk is a good target for comprehensive study. There has also been relatively little study on operational risk. Machine learning has been studied in the context of preventing or detecting operational risk occurrences, but there has been little application to operational risk management techniques, particularly in the areas of risk identification, assessments, monitoring, and reporting. Machine learning might be used to enhance operational risk management skills, which have traditionally depended on qualitative variables to assess, report, and manage risk, given the large quantities of operational data accessible.
 
 \newpage
 % \textbf{
